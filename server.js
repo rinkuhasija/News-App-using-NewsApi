@@ -3,12 +3,14 @@ const app =  express();
 import path from "path";
 import axios from "axios";
 import dotenv from 'dotenv'
+import cors from "cors";
 dotenv.config()
-const port = 3000;
+const port = 3001;
 
 
 //middlewares
 app.use(express.static('./public'));
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.sendFile("index.html", { root: path.join(__dirname, './public')} )}
