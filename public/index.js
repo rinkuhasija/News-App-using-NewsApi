@@ -1,15 +1,13 @@
-// require('dotenv').config();
-// console.log(process.env.APIKEY);
-// let apikey = APIKEY;
-// import api from './server2.js'
+
 let articlesPerPage, totalPages;
 // console.log(process.env.APIKEY);
 
 let query = window.location.search.split('?')[1].split('&')[0].split('=')[1]
 let page = window.location.search.split('?')[1].split('&')[1].split('=')[1]
+
 // let APIKEY = '2b55951b5a11498ca75009d8a6248af9'
-console.log(query);
-console.log(page);
+// console.log(query);
+// console.log(page);
 
 const fetchNews = async (query, pageNo) => {
     let news = await fetch(`/api?q=${query}&apiKey=2b55951b5a11498ca75009d8a6248af9&pageSize=12&page=${pageNo}`)
@@ -31,7 +29,8 @@ const fetchNews = async (query, pageNo) => {
     let str = ''
     // console.log("r.articles ==>" + r.articles);
     for (let item of r.articles) {
-        console.log(item)
+        // console.log(item)
+        
         str = str +
             `<div class="card m-3" style="width: 18rem;">
             <p class="mt-2 ml-4"> Date : ${(item.publishedAt).slice(0,10)}</p>
