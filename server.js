@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
 )
 
 app.get('/api',  async (req, res) => {
-    console.log(req._parsedUrl.query);
+    // console.log(req._parsedUrl.query);
+    
     let url = "https://newsapi.org/v2/everything?" + req._parsedUrl.query;
     let r = await axios.get(url)
     let a = r.data
